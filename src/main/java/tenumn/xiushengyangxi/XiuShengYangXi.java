@@ -15,6 +15,7 @@ import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import tenumn.xiushengyangxi.joker.JokerRegistry;
 
 import javax.rmi.CORBA.Util;
 import java.util.stream.Collectors;
@@ -38,6 +39,7 @@ public class XiuShengYangXi {
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+        JokerRegistry.registryAll();
     }
 
     private void setup(final FMLCommonSetupEvent event) {

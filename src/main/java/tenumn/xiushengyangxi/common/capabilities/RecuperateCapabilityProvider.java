@@ -1,4 +1,4 @@
-package tenumn.xiushengyangxi.common;
+package tenumn.xiushengyangxi.common.capabilities;
 
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
@@ -6,8 +6,7 @@ import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.common.util.INBTSerializable;
 import net.minecraftforge.common.util.LazyOptional;
-import tenumn.xiushengyangxi.common.capabilities.IRecuperateCap;
-import tenumn.xiushengyangxi.common.capabilities.RecuperateCap;
+import tenumn.xiushengyangxi.common.ModRegistry;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;

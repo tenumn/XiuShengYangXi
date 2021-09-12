@@ -3,6 +3,7 @@ package tenumn.xiushengyangxi.common.capabilities;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.text.TranslationTextComponent;
 
 public class RecuperateCap implements IRecuperateCap {
     private static final String POOP_COUNT_DOWN = "poop_count_down";
@@ -18,6 +19,7 @@ public class RecuperateCap implements IRecuperateCap {
     public void poop(LivingEntity livingEntity) {
         livingEntity.attackEntityFrom(DamageSource.MAGIC, 10);
         poop_countdown = MIN_POOP_COUNTDOWN;
+        livingEntity.sendMessage(new TranslationTextComponent("msg.hurt_by_fully_shit"), livingEntity.getUniqueID());
     }
 
     @Override

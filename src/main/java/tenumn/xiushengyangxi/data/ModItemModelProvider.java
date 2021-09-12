@@ -12,7 +12,7 @@ import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.fml.RegistryObject;
 import tenumn.xiushengyangxi.Utils;
-import tenumn.xiushengyangxi.joker.JokerRegistry;
+import tenumn.xiushengyangxi.common.ModRegistry;
 
 
 public class ModItemModelProvider extends ItemModelProvider {
@@ -20,9 +20,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         super(generator, Utils.MODID, existingFileHelper);
     }
 
-
+    //直接用注册名作为材质文件名的物品列表
     private static final ImmutableList<RegistryObject<Item>> simpleTextureList = new ImmutableList.Builder().add(
-            JokerRegistry.Items.SHIT
+            ModRegistry.Items.SHIT
     ).build();
 
     @Override
@@ -34,6 +34,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         return modLoc("item/" + itemProvider.asItem().getRegistryName().getPath());
     }
 
+    //用注册名表示材质名并生成json
     protected ItemModelBuilder generated(IItemProvider itemProvider) {
         return generated(itemProvider, itemTexture(itemProvider));
     }
@@ -53,6 +54,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         return itemModelBuilder;
     }
 
+    //手持物品
     protected ItemModelBuilder handheld(IItemProvider itemProvider) {
         return handheld(itemProvider, itemTexture(itemProvider));
     }

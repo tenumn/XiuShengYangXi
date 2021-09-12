@@ -13,6 +13,7 @@ public class DataGenEvent {
         DataGenerator dataGenerator=event.getGenerator();
         ExistingFileHelper existingFileHelper=event.getExistingFileHelper();
         ModItemModelProvider modItemModelProvider=new ModItemModelProvider(dataGenerator,existingFileHelper);
+        //注册物品模型
         dataGenerator.addProvider(modItemModelProvider);
     }
 }

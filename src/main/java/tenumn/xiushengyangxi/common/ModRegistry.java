@@ -3,12 +3,15 @@ package tenumn.xiushengyangxi.common;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.CapabilityInject;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import tenumn.xiushengyangxi.Utils;
+import tenumn.xiushengyangxi.common.capabilities.IRecuperateCap;
 import tenumn.xiushengyangxi.common.item.ItemShit;
 
 public class ModRegistry {
@@ -18,6 +21,8 @@ public class ModRegistry {
             return new ItemStack(ModRegistry.Items.SHIT.get());
         }
     };
+    @CapabilityInject(IRecuperateCap.class)//玩家养生能力
+    public static Capability<IRecuperateCap> RECUPERATE_CAPABILITY;
 
 
     //实列化物品

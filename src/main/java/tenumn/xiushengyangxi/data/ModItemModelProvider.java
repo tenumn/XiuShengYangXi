@@ -21,7 +21,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     }
 
     //直接用注册名作为材质文件名的物品列表
-    private static final ImmutableList<RegistryObject<Item>> simpleTextureList = new ImmutableList.Builder().add(
+    private static final ImmutableList<RegistryObject<Item>> simpleTextureList = new ImmutableList.Builder<RegistryObject<Item>>().add(
             ModRegistry.Items.SHIT
     ).build();
 

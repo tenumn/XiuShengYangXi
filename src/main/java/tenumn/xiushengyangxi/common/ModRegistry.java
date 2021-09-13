@@ -3,6 +3,8 @@ package tenumn.xiushengyangxi.common;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.particles.BasicParticleType;
+import net.minecraft.particles.ParticleType;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.CapabilityInject;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -35,5 +37,12 @@ public class ModRegistry {
     public static void registryAll() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         ModRegistry.Items.ITEMS.register(bus);
+        ParticleTypes.PARTICLE_TYPES.register(bus);
+    }
+
+    //实列化物品
+    public static class ParticleTypes {
+        public static final DeferredRegister<ParticleType<?>> PARTICLE_TYPES = DeferredRegister.create(ForgeRegistries.PARTICLE_TYPES, Utils.MODID);
+        public static final RegistryObject<ParticleType<BasicParticleType>> TEST = PARTICLE_TYPES.register("test", () -> new BasicParticleType(true));
     }
 }

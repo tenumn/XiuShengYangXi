@@ -8,4 +8,5 @@ public class Utils {
     public static ResourceLocation modLoc(String path){
         return new ResourceLocation(MODID,path);
     }
+    public static float PI = 3.1415926535f;
 }

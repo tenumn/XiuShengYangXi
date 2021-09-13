@@ -10,10 +10,13 @@ import net.minecraftforge.fml.event.lifecycle.GatherDataEvent;
 public class DataGenEvent {
     @SubscribeEvent
     public static void genModData(GatherDataEvent event){
-        DataGenerator dataGenerator=event.getGenerator();
-        ExistingFileHelper existingFileHelper=event.getExistingFileHelper();
-        ModItemModelProvider modItemModelProvider=new ModItemModelProvider(dataGenerator,existingFileHelper);
+        DataGenerator dataGenerator = event.getGenerator();
+        ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
+        //注册方块状态和模型
+        ModBlockStateProvider modBlockStateProvider = new ModBlockStateProvider(dataGenerator, existingFileHelper);
+        dataGenerator.addProvider(modBlockStateProvider);
         //注册物品模型
+        ModItemModelProvider modItemModelProvider = new ModItemModelProvider(dataGenerator, existingFileHelper);
         dataGenerator.addProvider(modItemModelProvider);
     }
 }

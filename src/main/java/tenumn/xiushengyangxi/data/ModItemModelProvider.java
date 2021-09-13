@@ -13,6 +13,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.fml.RegistryObject;
 import tenumn.xiushengyangxi.Utils;
 import tenumn.xiushengyangxi.common.ModRegistry;
+import tenumn.xiushengyangxi.joker.JokerRegistry;
 
 
 public class ModItemModelProvider extends ItemModelProvider {
@@ -28,6 +29,18 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         simpleTextureList.forEach((itemRegistryObject -> generated(itemRegistryObject.get())));
+        JokerRegistry.Items.ITEMS.getEntries().forEach((itemRegistryObject) -> {
+            Item item = itemRegistryObject.get();
+            if (item instanceof BlockItem) generatedBlockItem((BlockItem) item);
+        });
+    }
+
+
+    private ResourceLocation extendWithFolder(ResourceLocation rl) {
+        if (rl.getPath().contains("/")) {
+            return rl;
+        }
+        return new ResourceLocation(rl.getNamespace(), folder + "/" + rl.getPath());
     }
 
     protected ResourceLocation itemTexture(IItemProvider itemProvider) {

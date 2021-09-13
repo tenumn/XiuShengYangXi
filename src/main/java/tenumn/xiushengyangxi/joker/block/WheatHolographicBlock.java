@@ -11,6 +11,7 @@ import net.minecraft.world.IBlockReader;
 
 import javax.annotation.Nullable;
 
+//全息方块
 public class WheatHolographicBlock extends Block {
     public WheatHolographicBlock() {
         super(Properties.create(Material.ICE).notSolid());

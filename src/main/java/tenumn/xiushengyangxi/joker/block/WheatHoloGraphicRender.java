@@ -12,6 +12,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.vector.Vector3f;
 import tenumn.xiushengyangxi.common.ModRegistry;
 
+//特殊渲染（未完成）
 public class WheatHoloGraphicRender extends TileEntityRenderer<WheatHolographicTileEntity> {
     public WheatHoloGraphicRender(TileEntityRendererDispatcher rendererDispatcherIn) {
         super(rendererDispatcherIn);

@@ -1,4 +1,4 @@
-package tenumn.xiushengyangxi.common.item;
+package tenumn.xiushengyangxi.common;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -10,7 +10,6 @@ import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import tenumn.xiushengyangxi.Utils;
-import tenumn.xiushengyangxi.common.ModRegistry;
 import tenumn.xiushengyangxi.common.capabilities.IRecuperateCap;
 import tenumn.xiushengyangxi.common.capabilities.RecuperateCapabilityProvider;
 

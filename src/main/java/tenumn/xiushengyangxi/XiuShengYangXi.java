@@ -28,6 +28,7 @@ public class XiuShengYangXi {
     }
 
     private void onModelRegistry(ModelRegistryEvent event) {
+        //加载Shader
         RenderSystem.recordRenderCall(ShaderManager::reloadShaders);
     }
 

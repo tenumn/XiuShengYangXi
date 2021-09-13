@@ -3,7 +3,7 @@ package tenumn.xiushengyangxi.client.shader;
 import org.lwjgl.opengl.ARBShaderObjects;
 
 import java.util.function.IntSupplier;
-
+//shader变量类
 public abstract class ShaderUniform {
 
     protected final String name;
